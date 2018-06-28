@@ -53,7 +53,6 @@ export async function getNotifications({ all = true, participating = true }: { a
 
           let commentDetails: IGithubIssueComment | undefined;
           if (d.subject.latest_comment_url) {
-            console.log(d.subject.title, d.subject.latest_comment_url);
             commentDetails = await fetch(d.subject.latest_comment_url);
           }
 

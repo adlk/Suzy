@@ -8,7 +8,6 @@ const request = process.type === 'renderer' ? window.fetch : require('electron-f
 // const octokit = new Octokit();
 
 export async function fetch(url: string, options: any = {}): Promise<any> {
-  console.log(localStorage.getItem('githubToken'));
   const res: IServerResponse = await request(url, Object.assign(options, {
     headers: {
       Authorization: `token ${localStorage.getItem('githubToken')}`,
