@@ -18,8 +18,12 @@ export class LoginContainer extends React.Component<IProps> {
       height: 600,
     });
 
-    // loginWindow.loadURL('https://github.com/login/oauth/authorize?scope=user:email&client_id=b7e48f1081caffd58eab');
-    loginWindow.loadURL('http://localhost:3334/login');
+    let url = 'https://suzy.adlk.io/login';
+    if (process.env.NODE_ENV !== 'production') {
+      url = 'http://localhost:3334/login';
+    }
+
+    loginWindow.loadURL(url);
     loginWindow.show();
 
     loginWindow.webContents.on('did-navigate', (e, url) => {
