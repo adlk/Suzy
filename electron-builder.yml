@@ -1,0 +1,44 @@
+productName: Suzy
+appId: "io.adlk.suzy"
+
+directories:
+  output: ./release
+
+compression: maximum
+
+mac:
+  category: public.app-category.productivity
+  icon: ./resources/icons/icon.icns
+
+dmg:
+  background: ./resources/installer/installer.png
+  icon: ./resources/icons/icon.icns
+  iconSize: 128
+  contents: [{x: 380, y: 240, type: link, path: /Applications}, {x: 122, y: 240, type: file}]
+
+# win:
+#   icon: ./build-helpers/images/icon.ico
+#   target:
+#     target: nsis
+#     arch:
+#     - x64
+#     - ia32
+
+# linux:
+#   icon: ./build-helpers/images/icons
+#   category: Network;InstantMessaging;
+#   executableName: franz
+#   synopsis: "Messaging app for WhatsApp, Slack, Telegram, HipChat, Hangouts and many many more."
+#   description: "Franz is your messaging app / former Emperor of Austria and combines chat & messaging services into one application. Franz currently supports Slack, WhatsApp, WeChat, HipChat, Facebook Messenger, Telegram, Google Hangouts, GroupMe, Skype and many more. You can download Franz for free for Mac & Windows."
+#   target:
+#     - target: AppImage
+#     - target: deb
+#     - target: tar.gz
+
+# nsis:
+#   perMachine: false
+#   oneClick: true
+
+# protocols: 
+#   name: Franz
+#   schemes: [franz] 

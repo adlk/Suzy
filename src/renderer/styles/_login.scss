@@ -1,0 +1,22 @@
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: $theme-brand-actionOverlay;
+  -webkit-app-region: drag;
+
+  .logo {
+    width: 50%;
+    margin: -50px 0 20px;
+  }
+
+  button {
+    background: #FFF;
+    border: 0;
+    margin-top: 30px;
+    padding: 10px;
+    border-radius: 6px;
+    color: $theme-brand-actionOverlay;
+  }
+}

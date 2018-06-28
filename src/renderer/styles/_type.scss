@@ -1,0 +1,22 @@
+html {
+  font-family: $theme-font;
+  font-size: $theme-font-size;
+  color: $theme-brand-color;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+main a {
+  color: $theme-brand-link;
+  text-decoration: none;
+}
+
+button {
+  font-family: $theme-font;
+}
+
+*:focus {
+  outline: none;
+}

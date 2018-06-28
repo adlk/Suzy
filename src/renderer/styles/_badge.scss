@@ -1,0 +1,21 @@
+.badge {
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-size: 80%;
+  font-weight: normal;
+  margin-left: 10px;
+
+  &.default {
+    background: $theme-badge-default-background;
+  }
+
+  &.success {
+    background: $theme-state-success;
+    color: #FFF;
+  }
+
+  &.danger {
+    background: $theme-state-danger;
+    color: #FFF;
+  }
+}

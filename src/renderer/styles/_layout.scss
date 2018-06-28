@@ -1,0 +1,59 @@
+html, body, main, #app {
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+  margin: 0;
+}
+
+#app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  
+  // &:after {
+  //   content: '';
+  //   position: absolute;
+  //   top: 0;
+  //   left: 50%;
+  //   width: 0;
+  //   height: 0;
+  //   border: 8px solid transparent;
+  //   border-bottom-color: $theme-brand-primary;
+  //   border-top: 0;
+  //   margin-left: -8px;
+  //   margin-top: -8px;
+  // }
+}
+
+header {
+  -webkit-app-region: drag;
+}
+
+main {
+  background: $theme-app-background;
+  overflow: hidden;
+
+  &>div {
+    height: 100%;
+  }
+}
+
+footer {
+  height: $theme-footer-height / 2;
+  background: $theme-brand-footer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scrollContainer {
+  flex: 1;
+  overflow: scroll;
+}
+
+// * {
+//   box-sizing: content-box;
+// }
