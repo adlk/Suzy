@@ -1,9 +1,8 @@
-'use strict';
-
 import {
   app,
   BrowserWindow,
   globalShortcut,
+  Menu,
   nativeImage,
   screen,
   shell,
@@ -19,6 +18,8 @@ const WINDOW_WIDTH = 400;
 const WINDOW_HEIGHT = 600;
 const HORIZ_PADDING = 20;
 const VERT_PADDING = 0;
+
+const GLOBAL_TOGGLE_ACCELERATOR = 'CmdOrCtrl+Ctrl+Shift+G';
 
 // global reference to mainWindow (necessary to prevent window from being garbage collected)
 let mainWindow: BrowserWindow | null = null;
@@ -58,6 +59,20 @@ function createMainWindow() {
 
   trayIcon = new Tray(icon);
 
+  const contextMenu = Menu.buildFromTemplate([
+    {
+      label: 'Show',
+      click: () => trayIcon!.emit('click'),
+      accelerator: GLOBAL_TOGGLE_ACCELERATOR,
+    },
+    {
+      label: 'Quit',
+      click: () => app.quit(),
+      accelerator: 'CmdOrCtrl+Q',
+    },
+  ]);
+  // trayIcon.setContextMenu(contextMenu);
+
   trayIcon.on('click', (event, bounds) => {
     if (window.isVisible && window.isFocused()) {
       window.hide();
@@ -66,6 +81,10 @@ function createMainWindow() {
     }
 
     positionWindow(window, bounds);
+  });
+
+  trayIcon.on('right-click', (event, bounds) => {
+    trayIcon!.popUpContextMenu(contextMenu);
   });
 
   if (process.platform === 'darwin' && !isDevelopment) {
@@ -125,7 +144,7 @@ app.on('activate', () => {
 app.on('ready', () => {
   mainWindow = createMainWindow();
 
-  globalShortcut.register('CommandOrControl+Control+Shift+G', () => {
+  globalShortcut.register(GLOBAL_TOGGLE_ACCELERATOR, () => {
     if (!mainWindow || !trayIcon) { return; }
 
     trayIcon.emit('click');
