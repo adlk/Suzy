@@ -2,6 +2,12 @@
   "name": "suzy",
   "version": "0.0.1",
   "license": "MIT",
+  "author": {
+    "name": "Stefan Malzner",
+    "email": "stefan@adlk.io",
+    "url": "https://adlk.io"
+  },
+  "description": "Smart Github notifications in your menu bar",
   "scripts": {
     "dev": "electron-webpack dev",
     "compile": "electron-webpack",
