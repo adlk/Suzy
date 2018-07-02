@@ -1,5 +1,6 @@
 import { BrowserWindow, Tray } from 'electron';
 import { trayIcon } from './trayIcon';
+import { updater } from './updater';
 
 export interface IIPCParams {
   window: BrowserWindow;
@@ -8,4 +9,5 @@ export interface IIPCParams {
 
 export const ipcApi = (params: IIPCParams) => {
   trayIcon(params);
+  updater(params);
 };
