@@ -6,14 +6,10 @@ matrix:
 language: node_js
 
 before_script:
-- yarn add global node-sass
 - yarn install
 
 script:
 - travis_wait yarn dist
-
-node_js:
-- '9'
 
 cache: yarn
 
