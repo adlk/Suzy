@@ -1,4 +1,4 @@
-import { getNotifications, markAsRead } from 'common/api';
+import { getNotifications, markAsRead, unsubscribe } from 'common/api';
 import { Request } from 'common/lib/Request';
 import { Store } from 'common/lib/Store';
 import { stores } from 'common/stores';
@@ -85,7 +85,7 @@ export class NotificationStore extends Store {
   }
 
   @action.bound public unsubscribe(id: number) {
-    // unsubscribe(id);
+    unsubscribe(id);
 
     this.notificationsRequest.patch((result: INotificationRequestResponse) => {
       remove(result.data, (d) => d.id === id);
