@@ -12,7 +12,8 @@
     "dev": "electron-webpack dev",
     "compile": "electron-webpack",
     "dist": "yarn compile && electron-builder",
-    "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null"
+    "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null",
+    "changelog": "npx conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "dependencies": {
     "@adlk/auto-launch": "^5.0.1",
@@ -49,6 +50,7 @@
     "@types/react-dom": "^16.0.6",
     "@types/react-fontawesome": "^1.6.3",
     "@types/react-router-dom": "^4.2.7",
+    "conventional-changelog-cli": "^2.0.1",
     "electron": "^2.0.3",
     "electron-builder": "20.19.0",
     "electron-debug": "^2.0.0",
