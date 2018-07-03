@@ -10,7 +10,8 @@ const request = process.type === 'renderer' ? window.fetch : require('electron-f
 export async function fetch(url: string, options: any = {}): Promise<any> {
   const res: IServerResponse = await request(url, Object.assign(options, {
     headers: {
-      Authorization: `token ${localStorage.getItem('githubToken')}`,
+      'Authorization': `token ${localStorage.getItem('githubToken')}`,
+      'Cache-Control': 'no-cache',
     },
   }));
 
