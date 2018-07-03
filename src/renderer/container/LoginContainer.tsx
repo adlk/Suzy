@@ -19,7 +19,7 @@ export class LoginContainer extends React.Component<IProps> {
     });
 
     let url = 'https://suzy.adlk.io/login';
-    if (process.env.NODE_ENV !== 'production') {
+    if (process.env.LOCAL_API) {
       url = 'http://localhost:3334/login';
     }
 
