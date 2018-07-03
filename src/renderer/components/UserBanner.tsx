@@ -1,4 +1,5 @@
 import * as React from 'React';
+import { Link } from 'react-router-dom';
 import { Icon } from './ui/Icon';
 
 interface IProps {
@@ -23,8 +24,14 @@ export class UserBanner extends React.Component<IProps> {
             <span className="header__badge">{this.props.unreadCount}</span>
           )}
         </a>
+        <Link
+          to="/help"
+          className="header__action--right header__help"
+        >
+          <Icon icon="question-circle" />
+        </Link>
         <button
-          className="header__userMenu"
+          className="header__action--right header__userMenu"
           onClick={this.props.showMenu}
         >
           <Icon icon="cog" />

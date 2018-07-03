@@ -5,8 +5,8 @@ import { Provider } from 'mobx-react';
 import { syncHistoryWithStore } from 'mobx-react-router';
 import * as React from 'React';
 import { Route, Router } from 'react-router';
+import { Help } from './components/Help';
 import { NotificationDashboard } from './components/NotificationDashboard';
-// import { Layout } from './components/Layout';
 import { LoginContainer } from './container/LoginContainer';
 
 import 'common/lib/menu';
@@ -22,6 +22,7 @@ export class App extends React.Component {
         <Router history={history}>
           <React.Fragment>
             <Route exact path="/" component={NotificationDashboard} />
+            <Route path="/help" component={Help} />
             <Route path="/login" component={LoginContainer} />
           </React.Fragment>
         </Router>
