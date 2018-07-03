@@ -32,18 +32,41 @@
     text-align: center;
   }
 
-  &__userMenu {
-    background: none;
-    border: 0;
+  &__action--left,
+  &__action--right {
+    position: absolute;
+    color: #FFF;
+    text-decoration: none;
+  }
+
+  &__action--left {
+    left: 10px;
+  }
+
+  &__action--right{
+    right: 10px;
+  }
+
+  &__userMenu,
+  &__help {
     color: $theme-brand-meta;
     font-size: 18px;
-    position: absolute;
-    right: 5px;
     opacity: 0.3;
     transition: opacity 0.25s;
 
     &:hover {
       opacity: 1;
     }
+  }
+
+  &__help {
+    right: 45px;
+  }
+
+  &__userMenu {
+    background: none;
+    border: 0;
+    right: 5px;
+    margin-top: 1px;
   }
 }

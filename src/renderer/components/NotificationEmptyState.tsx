@@ -5,7 +5,7 @@ export class NotificationEmptyState extends React.Component {
     return (
       <article className="notificationsEmptyState">
         <p className="ascii_emoji">
-          “ヽ(´▽｀)ノ”
+          “ヽ{'{'}•̃▽•̃{'}'}ノ”
         </p>
         <p><strong>Status Code: 200 OK</strong></p>
         <p>There is nothing you need to worry about.</p>

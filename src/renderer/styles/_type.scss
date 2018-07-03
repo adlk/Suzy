@@ -20,3 +20,13 @@ button {
 *:focus {
   outline: none;
 }
+
+kbd {
+  display: inline-block;
+  border: 1px solid darken(#FFF, 40%);
+  background: darken(#FFF, 10%);
+  color: $theme-app-background;
+  border-bottom-width: 3px;
+  border-radius: 3px;
+  padding: 5px 10px;
+}
