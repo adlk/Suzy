@@ -3,7 +3,7 @@
 
 Bleep. Bloop. Hello I'm Suzy.
 
-I'm a Github Notifications but for your macOS menubar.
+I'm a Github Notifications bot for your macOS menubar.
 
 [Download me.](https://github.com/adlk/Suzy/releases/latest)
 
